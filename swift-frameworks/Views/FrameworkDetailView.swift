@@ -40,7 +40,9 @@ struct FrameworkDetailView: View {
             Spacer()
             
             Button {
-                print("learn more tapped")
+                if let url =  URL(string: framework.urlString) {
+                    UIApplication.shared.open(url)
+                }
             } label: {
                 AFButton(title: "Learn More")
             }
